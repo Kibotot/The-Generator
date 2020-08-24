@@ -8,4 +8,4 @@
 ### adjusting hue, lightness and saturation in dropdown menu,
 ### copying to clipboard so you can paste anywhere you want. 
 ### It uses local storage, so you can save palette you like to your libarary
-and use it again!
+and use it again at https://the-generator.netlify.app/
