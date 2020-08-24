@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -10,7 +11,7 @@ html {
 
 body {
   font-family: "Quicksand", sans-serif;
-  color: rgb(51, 51, 51);
+  color: #333333;
 }
 
 path,
@@ -20,18 +21,40 @@ svg {
 }
 
 .colors {
-  min-height: 90vh;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  color: rgb(218, 218, 218);
+  color: #dadada;
+}
+
+@media (max-width: 420px) {
+  .colors {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .color {
   height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   position: relative;
   overflow: hidden;
   color: white;
@@ -40,12 +63,17 @@ svg {
 .color h2 {
   font-size: 2rem;
   cursor: pointer;
-  color: rgb(218, 218, 218);
+  color: #dadada;
 }
 
 .sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
   bottom: 0%;
   background: white;
@@ -56,19 +84,23 @@ svg {
   border-top-left-radius: 1rem;
   pointer-events: none;
   /* adjusment class */
-  transform: translateY(100px);
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .sliders.active {
   opacity: 1;
-  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
   pointer-events: all;
 }
 
 .sliders span {
-  color: rgb(177, 177, 177);
+  color: #b1b1b1;
 }
+
 .sliders button,
 .close-save,
 .close-library {
@@ -77,31 +109,45 @@ svg {
   right: 0;
   /* padding: 0.6rem; */
   width: 2.4rem;
-  background: rgb(29, 29, 29);
+  background: #1d1d1d;
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   border: none;
   color: white;
   cursor: pointer;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
-  justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .sliders button {
   height: 2.4rem;
 }
+
 .close-save {
   height: 3.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out;
 }
+
 .submit-save {
   color: white;
-  background: rgb(29, 29, 29);
+  background: #1d1d1d;
   font-weight: 600;
   font-size: 1.4rem;
   width: 20%;
@@ -109,17 +155,25 @@ svg {
   cursor: pointer;
   border: none;
   border-radius: 1rem;
+  -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out;
   /* padding: 1.4rem 3rem; */
 }
+
 .submit-save:hover,
 .close-save:hover {
-  background: rgb(80, 80, 80);
+  background: #505050;
   color: white;
 }
+
 .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .adjust,
@@ -132,17 +186,25 @@ svg {
 }
 
 .panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   height: 20vh;
+  background: #ffffff;
+  border-top: 3px solid black;
 }
 
 .panel button {
   font-size: 1.2rem;
   margin: 1rem;
   padding: 1rem 2rem;
-  background: rgb(31, 33, 63);
+  background: #1f213f;
   border: none;
   color: white;
   cursor: pointer;
@@ -155,13 +217,19 @@ svg {
 .library-panel,
 .generate-panel,
 .save-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* slider */
-
 input[type="range"] {
   -webkit-appearance: none;
   margin: 1rem 0rem;
@@ -179,10 +247,17 @@ input[type="range"] {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 0;
   pointer-events: none;
 }
@@ -191,17 +266,31 @@ input[type="range"] {
 .save-popup,
 .library-popup {
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 1rem;
   font-size: 2rem;
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
-  transform: translateY(-2rem);
+  transition: transform 2s ease, -webkit-transform 2s ease;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
   min-width: 30%;
   min-height: 30vh;
 }
+
 .copy-container.active,
 .save-container.active,
 .library-container.active {
@@ -212,12 +301,15 @@ input[type="range"] {
 .copy-popup.active,
 .save-popup.active,
 .library-popup.active {
-  transform: translateY(0rem);
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
 }
+
 .save-popup button,
 .library-popup button {
   padding: 0.8rem 1.6rem;
 }
+
 .save-name {
   width: 60%;
   min-height: 3rem;
@@ -226,32 +318,48 @@ input[type="range"] {
 .library-popup {
   min-width: 40vw;
   padding: 1rem;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   overflow-y: scroll;
   max-height: 50vh;
 }
 
 .custom-palette {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 100%;
   padding: 2rem;
 }
 
 .small-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-right: 2rem;
 }
 
 .custom-palette h4 {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .small-preview div {
   height: 5rem;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .pick-palette-btn {
@@ -261,6 +369,7 @@ input[type="range"] {
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
-  background: rgb(68, 68, 68);
+  background: #444444;
   color: white;
 }
+/*# sourceMappingURL=style.css.map */
